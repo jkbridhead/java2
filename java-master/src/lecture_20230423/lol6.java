@@ -3,7 +3,7 @@ package lecture_20230423;
 
 import java.util.Scanner;
 
-public class lol6 {
+public class    lol6 {
     public static void main(String[] args) {
         System.out.println("대결을 시작힙니까? 1:시작, 2:탈주");
         Scanner sc = new Scanner(System.in);
@@ -29,19 +29,27 @@ public class lol6 {
                     int Corki = Corkiak - rand;
                     int zed = Zedak - rand;
                     zedhp = zedhp - Corki;
-                    System.out.println("코르키 -> 제드 " + Corki + "의 피해 (코르키 체력:" + Corkihp + ", 제드체력: " + zedhp + ")");
-                    Corkihp = Corkihp - zed;
-                    System.out.println("제드 -> 코르키 " + zed + "의 피해 (코르키 체력:" + Corkihp + ", 제드체력: " + zedhp + ")");
-                    rand = (int) (Math.random() * 100);
-                    if (Corkihp <= 0) {
-                        Corkihp = 0;
-                        System.out.println("제드 라인전 승리");
-                    }
                     if (zedhp <= 0) {
                         zedhp = 0;
+                        System.out.println("코르키 -> 제드 " + Corki + "의 피해 (코르키 체력:" + Corkihp + ", 제드체력: " + zedhp + ")");
                         System.out.println("코르키 라인전 승리");
+                        break;
                     }
+                    System.out.println("코르키 -> 제드 " + Corki + "의 피해 (코르키 체력:" + Corkihp + ", 제드체력: " + zedhp + ")");
+
+
+                    Corkihp = Corkihp - zed;
+                    if (Corkihp <= 0) {
+                        Corkihp = 0;
+                        System.out.println("제드 -> 코르키 " + zed + "의 피해 (코르키 체력:" + Corkihp + ", 제드체력: " + zedhp + ")");
+                        System.out.println("제드 라인전 승리");
+                        break;
+                    }
+                    System.out.println("제드 -> 코르키 " + zed + "의 피해 (코르키 체력:" + Corkihp + ", 제드체력: " + zedhp + ")");
+                    rand = (int) (Math.random() * 100);
+                    }
+                break;
                 }
         }
     }
-}
+
